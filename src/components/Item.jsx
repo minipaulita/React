@@ -1,9 +1,9 @@
 import React from "react";
 import ItemCount from "./ItemCount";
-export default function Item() {
+export default function Item({ stock, product }) {
   return (
     <>
-      <ItemCount stock={10} product={"Cuaderno"} />
+      <ItemCount stock={{ stock }} product={{ product }} />
     </>
   );
 }
