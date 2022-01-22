@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function ItemCount({ stock, product }) {
+export default function ItemCount({ stock }) {
   const [cantidad, setCantidad] = useState(0);
   let agregar = () => {
     stock > cantidad
@@ -17,11 +17,10 @@ export default function ItemCount({ stock, product }) {
   };
   return (
     <>
-      <div className="m-2">
-        <h2>{product}</h2>
+      <div className="">
         <div className="flex flex-row justify-center items-center">
           <button
-            className="p-2  hover:bg-yellow-500 rounded-full"
+            className="p-1  hover:bg-yellow-500 rounded-full"
             onClick={() => onSubtract()}
           >
             -
@@ -29,13 +28,18 @@ export default function ItemCount({ stock, product }) {
           <p>Cantidad: {cantidad}</p>
 
           <button
-            className="p-2  hover:bg-yellow-500 rounded-full"
+            className="p-1  hover:bg-yellow-500 rounded-full"
             onClick={() => agregar()}
           >
             +
           </button>
         </div>
-        <button onClick={() => onAdd()}>Agregar Al Carrito</button>
+        <button
+          className="hover:bg-yellow-500 rounded-full"
+          onClick={() => onAdd()}
+        >
+          Agregar Al Carrito
+        </button>
       </div>
     </>
   );
