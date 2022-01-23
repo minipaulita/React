@@ -5,7 +5,7 @@ export default function ItemDetailContainer() {
   const [llegoLaPromesa, setLlegoLaPromesa] = useState(false);
   const [arrayDetail, setArrayDetail] = useState([]);
 
-  const productosEnStock = new Promise((resolve, reject) => {
+  const productoDetalle = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve([
         {
@@ -39,7 +39,7 @@ export default function ItemDetailContainer() {
   });
 
   useEffect(() => {
-    productosEnStock
+    productoDetalle
       .then((res) => {
         setLlegoLaPromesa(true);
         setArrayDetail(res);
